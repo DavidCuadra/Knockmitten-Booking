@@ -1,0 +1,69 @@
+﻿@model IEnumerable<KnockmittenBooking.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Insurance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GardaVetting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiseLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberPeople)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Insurance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GardaVetting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiseLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberPeople)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
