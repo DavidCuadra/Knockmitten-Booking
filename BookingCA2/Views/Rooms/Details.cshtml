@@ -4,10 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
 
-<div>
-    <h4>Room</h4>
+    body {
+        background-image: url(/Images/Background6.jpg);
+    }
+</style>
+
+
+
+<h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
+
+<h3>Room Details</h3>
+
+<h4><div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -35,7 +45,7 @@
         </dd>
 
     </dl>
-</div>
+</div><</h4>>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.RoomID }) |
     @Html.ActionLink("Back to List", "Index")

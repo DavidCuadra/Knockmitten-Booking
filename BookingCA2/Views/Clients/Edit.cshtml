@@ -4,15 +4,23 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<style>
 
+    body {
+        background-image: url(/Images/Picture1.png);
+    }
+</style>
+
+
+
+<h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
+<h3>Edit Client</h3>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Client</h4>
+
+    <h4><div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ClientID)
@@ -82,7 +90,7 @@
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    </div><</h4>>
 }
 
 <div>

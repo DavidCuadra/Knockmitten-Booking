@@ -4,12 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+
+    body {
+        background-image: url(/Images/Background6.jpg);
+    }
+</style>
+
+
+
+<h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
+
+<h3>Please, choose your room</h3>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<h4><table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RoomNumber)
@@ -23,23 +34,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Teas)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RoomID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RoomID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RoomID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teas)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RoomID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RoomID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RoomID })
+            </td>
+        </tr>
+    }
 
-</table>
+</table><</h4>>

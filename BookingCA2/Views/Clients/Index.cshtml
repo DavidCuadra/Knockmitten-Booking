@@ -4,12 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+
+    body {
+        background-image: url(/Images/Picture1.png);
+    }
+</style>
+
+
+
+<h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<h4><table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ClientName)
@@ -35,35 +44,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Insurance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GardaVetting)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoiseLevel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberPeople)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClientID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClientID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClientID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Insurance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GardaVetting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiseLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberPeople)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ClientID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ClientID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ClientID })
+            </td>
+        </tr>
+    }
 
-</table>
+</table></h4>
