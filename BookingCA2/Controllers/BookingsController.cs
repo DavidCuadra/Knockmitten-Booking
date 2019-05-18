@@ -17,8 +17,8 @@ namespace BookingCA2.Controllers
         // GET: Bookings
         public ActionResult Index()
         {
-            var bookings = db.Bookings.Include(b => b.Clients).Include(b => b.Rooms);
-            return View(bookings.ToList());
+            //var bookings = db.Bookings.Include(b => b.Clients).Include(b => b.Rooms);
+            return View(db.Bookings.ToList());
         }
 
         // GET: Bookings/Details/5
@@ -36,7 +36,7 @@ namespace BookingCA2.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Create
+       // GET: Bookings/Create
         public ActionResult Create()
         {
             ViewBag.ClientID = new SelectList(db.Clients, "ClientID", "ClientName");
@@ -131,6 +131,22 @@ namespace BookingCA2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [Route("BookRoom")]
+        public ActionResult BookRoom(int roomId, int clientId)
+        {
+            Booking booking = new Booking();
+            booking.ClientID = clientId;
+            booking.RoomID = roomId;
+            booking.Booked = true;
+
+            db.Bookings.Add(booking);
+            db.SaveChanges();
+
+            // return View(db.Bookings);
+            return RedirectToAction("Index");
+
         }
     }
 }

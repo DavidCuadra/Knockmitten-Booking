@@ -15,10 +15,13 @@
 
 <h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
 
-<p>
+<h3><strong>Select a Client or enter a new one</strong></h3>
+
+<h3>
     @Html.ActionLink("Create New", "Create")
-</p>
-<h4><table class="table">
+</h3>
+
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ClientName)
@@ -72,8 +75,11 @@
                 @Html.ActionLink("Edit", "Edit", new { id = item.ClientID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ClientID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ClientID })
+                @Html.ActionLink("Book a Room", "AddClientRoom", new { id = item.ClientID })
+                
+
             </td>
         </tr>
     }
 
-</table></h4>
+</table>

@@ -15,7 +15,7 @@ namespace BookingCA2.Models
         public DbSet<Booking> Bookings { get; set; }
 
 
-        public BookingContext() : base("BookDBContext")
+        public BookingContext() : base("BookingsContext")
         {
 
         }

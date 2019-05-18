@@ -6,9 +6,7 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -23,14 +21,15 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Clients.ClientName)
         </td>
-        <td>
+         <td>
             @Html.DisplayFor(modelItem => item.Rooms.RoomNumber)
-        </td>
+         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Booked)
         </td>

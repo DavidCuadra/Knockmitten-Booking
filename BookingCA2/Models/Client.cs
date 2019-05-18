@@ -44,10 +44,22 @@ namespace BookingCA2.Models
         public Noise NoiseLevel { get; set; }
 
         [Required]
-        [MinLength(1)]
-        [MaxLength(2)]
         [Display(Name = "Number of people in your activity")]
-        public string NumberPeople { get; set; }
-  
+        public int NumberPeople { get; set; }
+
+        public string MaxPeople()
+        {
+            if (NumberPeople > 15)
+            {
+                return "You have reached the max amount of people permited";
+            }
+            else
+            {
+                return "";
+            }
+
+        }
+
+
     }
 }

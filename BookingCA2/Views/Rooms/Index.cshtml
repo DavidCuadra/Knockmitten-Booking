@@ -15,43 +15,42 @@
 
 <h2><strong>KNOCKMITTEN YOUTH AND COMMUNITY CENTRE</strong></h2>
 
-<h3>Please, choose your room</h3>
+<h3><strong>Select a Room, Date and Refresements or enter a new one</strong></h3>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<h4><table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Teas)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
+
+<h4>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoomNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Teas)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.RoomID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.RoomID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.RoomID })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teas)
+            </th>*@
+            <th></th>
         </tr>
-    }
 
-</table><</h4>>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teas)
+                </td>*@
+                <td>             
+                    @Html.ActionLink("Book This Room", "BookRoom", "Bookings", new { roomId = item.RoomID, clientId = ViewBag.clientId }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</h4>

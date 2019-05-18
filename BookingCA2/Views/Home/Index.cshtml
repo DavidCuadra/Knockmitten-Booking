@@ -1,31 +1,75 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    body {
+        background-color: #d1f2eb;
+    }
+    </style >
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron" >
+    <h1 > Welcome to Knockmitten Youth and Community Centre</h1 >
+    <p class="lead" > Knockmitten Youth & Community Centre opened it's doors in June 2006. The centre provides activities for people of all ages. If you have any questions please do not hesitate to contact us.</p>
+    <p > <a href="https://knockmittencenter.weebly.com/" class="btn btn-primary btn-lg" > Go to our website &raquo;</a > </p > <br >
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div >
+
+    <div class = "container" >
+
+    <h2 > Knockmitten Youth & Community Centre provides facilities for hire as well as services like coffee, tea and more. Please see below for pictures, application form and contact form.
+    </h2 >
+
+    </div >
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <p>
+                <h3> Room1</h3> <br>
+                Room 1 holds appromaxitely 15 people. It has wooden floors - great for any kind of activity. Very illuminated, heating and cooling fan on demand.<br>
+                Dimentions:<br>
+                Length: 9.14 Meters<br>
+                Width: 6.4 Meters<br>
+
+                Length: 30 Feet<br>
+                Width: 21 Feet<br>
+
+                <img scr=" /Images/Room1.PNG" alt=" Room1">
+
+
+            </p>
+            <p> <a class="btn btn-default" href="https://knockmittencenter.weebly.com/room-hire.html"> See more&raquo;</a> </p>
+        </div>
+
+        <div class="col-md-4">
+            <h3> Room2</h3> <br>
+            <p> Room 2 holds appromaxitely 15 people. It has wooden floors - great for any kind of activity. Very illuminated, heating and cooling fan on demand.</p>
+            Dimentions:<br>
+            Length: 9.14 Meters<br>
+            Width: 6.4 Meters<br>
+
+            Length: 30 Feet<br>
+            Width: 21 Feet<br>
+
+            <img scr=" Images/Room1.PNG" alt=" Room2">
+            <p> <a class="btn btn-default" href="https://knockmittencenter.weebly.com/room-hire.html"> See more &raquo;</a> </p>
+        </div>
+
+
+        <div class="col-md-4">
+            <h3> Room3</h3>
+            <p> Room 3 holds appromaxitely 15 people. It has wooden floors - great for any kind of activity. Very illuminated, heating and cooling fan on demand.</p>
+            Dimentions:<br>
+            Length: 8.2 Meters<br>
+            Width: 6.4 Meters<br>
+
+            Length: 27 Feet<br>
+            Width: 21 Feet<br>
+            <img scr=" Images/Room1.PNG" alt=" Room3">
+            <p> <a class="btn btn-default" href="https://knockmittencenter.weebly.com/room-hire.html"> See more &raquo;</a> </p>
+        </div>
+
+        <p> @Html.ActionLink("Book a room", "Index", "Clients", null, new {@class = "btn btn-primary btn-lg"} ) </p> <br>
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>

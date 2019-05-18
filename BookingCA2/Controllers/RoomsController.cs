@@ -15,8 +15,9 @@ namespace BookingCA2.Controllers
         private BookingContext db = new BookingContext();
 
         // GET: Rooms
-        public ActionResult Index()
+        public ActionResult Index(int? clientId)
         {
+            ViewBag.clientId = clientId;
             return View(db.Rooms.ToList());
         }
 
@@ -43,19 +44,20 @@ namespace BookingCA2.Controllers
 
         // POST: Rooms/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+         //more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RoomID,RoomNumber,Date,Teas")] Room room)
         {
             if (ModelState.IsValid)
             {
+//                Booking b1 = new Booking() {ClientID= }
                 db.Rooms.Add(room);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index/", "Bookings");
             }
 
-            return View(room);
+            return View();
         }
 
         // GET: Rooms/Edit/5
@@ -123,5 +125,6 @@ namespace BookingCA2.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

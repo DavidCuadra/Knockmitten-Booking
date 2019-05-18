@@ -17,6 +17,7 @@ namespace BookingCA2.Controllers
         private BookingContext db = new BookingContext();
 
         // GET: api/BookingsAPI
+        [HttpGet]
         public IHttpActionResult GetBookings()
         {
             var booking = db.Bookings;

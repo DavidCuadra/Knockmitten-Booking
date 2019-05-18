@@ -15,6 +15,7 @@ namespace BookingCA2.Controllers
         private BookingContext db = new BookingContext();
 
         // GET: Clients
+        [HttpGet]
         public ActionResult Index()
         {
             return View(db.Clients.ToList());
@@ -48,11 +49,14 @@ namespace BookingCA2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ClientID,ClientName,Phone,Email,Insurance,GardaVetting,NoiseLevel,NumberPeople")] Client client)
         {
+
             if (ModelState.IsValid)
             {
+                
                 db.Clients.Add(client);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Create/", "Rooms");
+                return RedirectToAction("Index/", "Clients");
             }
 
             return View(client);
@@ -82,6 +86,7 @@ namespace BookingCA2.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,6 +127,13 @@ namespace BookingCA2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        // GET: Clients/Create
+        [Route("AddClientRoom")]
+        public ActionResult AddClientRoom(int id)
+        {
+            return RedirectToAction("Index", "Rooms", new { clientId = id });
         }
     }
 }
